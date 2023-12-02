@@ -1,0 +1,44 @@
+.toDoApp {
+    padding: 30px;
+    margin: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 10px #bababa;
+    border-radius: 30px;
+}
+
+.toDoTasks {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.separateTask {
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.closeButton {
+    color: red;
+    font-weight: bolder;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.taskHeading {
+    font-size: 20px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
