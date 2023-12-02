@@ -31,7 +31,7 @@ const ToDoList = () => {
 
     const deleteTask = (id) => {
         axios
-            .delete(`http://localhost:5000/toDos/${id}`)
+            .delete(`https://to-do-list-app-plum.vercel.app/toDos/${id}`)
             .then((response) => {
                 setTasks(tasks.filter(task => task._id !== id));
             })
