@@ -18,7 +18,7 @@ const ToDoList = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get('http://localhost:5000/toDos')
+            .get('http://to-do-list-app-plum.vercel.app/toDos')
             .then((response) => {
                 setTasks(response.data);
                 setLoading(false);

@@ -18,7 +18,7 @@ const NewTask = ({ onTaskAdded }) => {
                 isCompleted: false
             }
             axios
-                .post('http://localhost:5000/toDos', newTask)
+                .post('https://to-do-list-app-plum.vercel.app/toDos', newTask)
                 .then((response) => {
                     const newTaskId = response.data._id;
                     newTask = {
