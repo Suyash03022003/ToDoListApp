@@ -18,7 +18,7 @@ const ToDoList = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get('http://to-do-list-app-plum.vercel.app/toDos')
+            .get('https://to-do-list-app-plum.vercel.app/toDos')
             .then((response) => {
                 setTasks(response.data);
                 setLoading(false);
@@ -31,7 +31,7 @@ const ToDoList = () => {
 
     const deleteTask = (id) => {
         axios
-            .delete(`http://to-do-list-app-plum.vercel.app/toDos/${id}`)
+            .delete(`https://to-do-list-app-plum.vercel.app/toDos/${id}`)
             .then((response) => {
                 setTasks(tasks.filter(task => task._id !== id));
             })
@@ -55,7 +55,7 @@ const ToDoList = () => {
                     console.log(updatedTask.isCompleted);
 
                     axios
-                        .put(`https://to-do-list-app-plum.vercel.app/${id}`, updatedTask)
+                        .put(`https://to-do-list-app-plum.vercel.app/toDos/${id}`, updatedTask)
                         .then((response) => {
                             console.log(response.data);
                         })
