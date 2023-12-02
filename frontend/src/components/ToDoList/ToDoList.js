@@ -55,7 +55,7 @@ const ToDoList = () => {
                     console.log(updatedTask.isCompleted);
 
                     axios
-                        .put(`http://localhost:5000/toDos/${id}`, updatedTask)
+                        .put(`https://to-do-list-app-plum.vercel.app/${id}`, updatedTask)
                         .then((response) => {
                             console.log(response.data);
                         })

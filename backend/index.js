@@ -10,14 +10,6 @@ app.use(express.json());
 
 app.use(cors());
 
-// app.use(cors
-//     ({
-//         origin: 'https://localhost:3000',
-//         method: ['GET', 'POST', 'PUT', 'DELETE'],
-//         allowedHeaders: []
-//     })
-// );
-
 app.get('/', (request, response) => {
     console.log(request);
     return response.status(234).send('Hello World!');
