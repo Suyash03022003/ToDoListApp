@@ -1,0 +1,92 @@
+.mainLoginDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginForm {
+    width: 30%;
+    border: 1px solid #666;
+    border-radius: 30px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+}
+
+.loginForm h1 {
+    color: rgb(255, 30, 90);
+}
+
+.loginForm input {
+    width: 70%;    
+    padding: 10px;
+}
+
+.loginForm a {
+    color: blue;
+    font-size: 18px;
+}
+
+.loginForm #btn {
+    background-color: rgb(255, 30, 90);
+    font-size: 18px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.loginForm #btn:hover {
+    border-radius: 0;
+    transform: scale(1.01);
+}
+
+.loginForm .userInputWrp {
+    position: relative;
+    width: 70%;
+    margin: auto;
+    margin: 5px 0;
+}
+
+.loginForm .userInputWrp .inputText {
+    width: 100%;
+    outline: 0;
+    box-shadow: none !important;
+    padding: 20px;
+    font-size: 18px;
+    transition: 0.4s;
+    border: 1px solid #888;
+}
+
+.loginForm span {
+    font-size: 18px;
+}
+
+.loginForm .userInputWrp .inputText:focus {
+    border-radius: 15px;
+    border: 1px solid #888;
+    outline: 0;
+}
+
+.loginForm .userInputWrp .floatingLabel {
+    position: absolute;
+    pointer-events: none;
+    top: 23px;
+    left: 15px;
+    transition: 0.2s ease all;
+}
+
+.loginForm .userInputWrp input:focus~.floatingLabel,
+.loginForm .userInputWrp input:not(:focus):valid~.floatingLabel {
+    top: -22px;
+    left: 15px;
+    font-size: 18px;
+    opacity: 1;
+}

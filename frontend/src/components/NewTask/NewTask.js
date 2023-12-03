@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './NewTask.module.css';
 import axios from 'axios';
+import { useCookies } from "react-cookie"
 
 const NewTask = ({ onTaskAdded }) => {
     const [task, setTask] = useState("");
+
+    const [cookies, setCookie] = useCookies(['user']);
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        if (cookies.user) {
+            setUser(cookies.user);
+        }
+    }, [cookies.user]);
 
     const handleTextChange = (event) => {
         setTask(event.target.value);
@@ -15,7 +26,8 @@ const NewTask = ({ onTaskAdded }) => {
         } else {
             let newTask = {
                 taskName: task,
-                isCompleted: false
+                isCompleted: false,
+                user: user.id
             }
             axios
                 .post('https://to-do-list-app-plum.vercel.app/toDos', newTask)
@@ -24,7 +36,8 @@ const NewTask = ({ onTaskAdded }) => {
                     newTask = {
                         _id: newTaskId,
                         taskName: task,
-                        isCompleted: false
+                        isCompleted: false,
+                        user: user._id
                     }
                     setTask("");
                     onTaskAdded(newTask);

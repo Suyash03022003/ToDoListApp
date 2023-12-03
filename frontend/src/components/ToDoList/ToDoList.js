@@ -3,8 +3,19 @@ import Navbar from '../Navbar/Navbar.js';
 import NewTask from '../NewTask/NewTask.js';
 import styles from './ToDoList.module.css';
 import axios from 'axios';
+import { useCookies } from "react-cookie"
 
 const ToDoList = () => {
+    const [cookies, setCookie] = useCookies(['user']);
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        if (cookies.user) {
+            setUser(cookies.user);
+        }
+    }, [cookies.user]);
+
     const [tasks, setTasks] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -18,7 +29,7 @@ const ToDoList = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get('https://to-do-list-app-plum.vercel.app/toDos')
+            .get(`https://to-do-list-app-plum.vercel.app/toDos/${user.id}`)
             .then((response) => {
                 setTasks(response.data);
                 setLoading(false);
@@ -27,7 +38,7 @@ const ToDoList = () => {
                 console.log(error);
                 setLoading(false);
             });
-    }, []);
+    }, [user]);
 
     const deleteTask = (id) => {
         axios

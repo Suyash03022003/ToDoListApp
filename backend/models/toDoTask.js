@@ -8,6 +8,10 @@ const taskSchema = mongoose.Schema(
         },
         isCompleted: {
             type: Boolean,
+        },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "users"
         }
     }
 )
