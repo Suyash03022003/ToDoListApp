@@ -7,7 +7,7 @@
 ### Clone the Repository:
 Open terminal and navigate to the path where you have to clone this project and run the below command.
 
-git clone https://github.com/Suyash03022003/Placement-Preparation-Module.git
+https://github.com/Suyash03022003/ToDoListApp.git
 
 ### Open 2 terminals and navigate to the path where you have cloned this repo:
 In the first terminal enter: 
